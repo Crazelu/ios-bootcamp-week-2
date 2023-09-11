@@ -12,6 +12,11 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		FF2E53B52AAF8E77003826CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2E53B42AAF8E77003826CB /* Constants.swift */; };
+		FF2E53B82AAF8ED1003826CB /* SlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2E53B72AAF8ED1003826CB /* SlidersView.swift */; };
+		FF2E53BA2AAF9175003826CB /* SetColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2E53B92AAF9175003826CB /* SetColorButton.swift */; };
+		FF2E53BC2AAF9993003826CB /* ColoredRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2E53BB2AAF9993003826CB /* ColoredRectangle.swift */; };
+		FF2E53BE2AAFC11A003826CB /* ResponsiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2E53BD2AAFC11A003826CB /* ResponsiveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF2E53B42AAF8E77003826CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FF2E53B72AAF8ED1003826CB /* SlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersView.swift; sourceTree = "<group>"; };
+		FF2E53B92AAF9175003826CB /* SetColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorButton.swift; sourceTree = "<group>"; };
+		FF2E53BB2AAF9993003826CB /* ColoredRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredRectangle.swift; sourceTree = "<group>"; };
+		FF2E53BD2AAFC11A003826CB /* ResponsiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,14 @@
 		18D775BF22AD944300AE281E /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				FF2E53B62AAF8EB3003826CB /* Views */,
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
 				18D775C422AD944300AE281E /* ContentView.swift */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775CE22AD944400AE281E /* Info.plist */,
 				18D775C822AD944400AE281E /* Preview Content */,
+				FF2E53B42AAF8E77003826CB /* Constants.swift */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -72,6 +84,17 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF2E53B62AAF8EB3003826CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF2E53B72AAF8ED1003826CB /* SlidersView.swift */,
+				FF2E53B92AAF9175003826CB /* SetColorButton.swift */,
+				FF2E53BB2AAF9993003826CB /* ColoredRectangle.swift */,
+				FF2E53BD2AAFC11A003826CB /* ResponsiveView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +192,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2E53BC2AAF9993003826CB /* ColoredRectangle.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
+				FF2E53B82AAF8ED1003826CB /* SlidersView.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
+				FF2E53BE2AAFC11A003826CB /* ResponsiveView.swift in Sources */,
+				FF2E53B52AAF8E77003826CB /* Constants.swift in Sources */,
+				FF2E53BA2AAF9175003826CB /* SetColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorPicker/Preview Content\"";
-				DEVELOPMENT_TEAM = BBK84N9JY9;
+				DEVELOPMENT_TEAM = A83BPKB32J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ColorPicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -318,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.ColorPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.crazelu.ColorPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorPicker/Preview Content\"";
-				DEVELOPMENT_TEAM = BBK84N9JY9;
+				DEVELOPMENT_TEAM = A83BPKB32J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ColorPicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -339,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.ColorPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.crazelu.ColorPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
