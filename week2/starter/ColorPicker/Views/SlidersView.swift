@@ -1,15 +1,15 @@
 /// Copyright (c) 2023 Kodeco Inc.
-///
+/// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-///
+/// 
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-///
+/// 
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-///
+/// 
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,46 +32,54 @@
 
 import SwiftUI
 
-struct ContentView: View {
-  @State private var redColor: Double = 0.0
-  @State private var greenColor: Double = 0.0
-  @State private var blueColor: Double = 0.0
-  @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
-  @Environment(\.colorScheme) var colorScheme
-  @Environment(\.verticalSizeClass) var verticalSizeClass
-  
-  var isInDarkMode: Bool {
-    colorScheme == .dark
-  }
-  
-  var isInPortraitMode: Bool {
-    verticalSizeClass == .regular
-  }
+struct SlidersView: View {
+   @Binding var redValue: Double
+   @Binding var greenValue: Double
+   @Binding var blueValue: Double
   
   var body: some View {
-    ResponsiveView(
-      redColor: $redColor,
-      greenColor: $greenColor,
-      blueColor: $blueColor,
-      foregroundColor: $foregroundColor,
-      isInPortraitMode: isInPortraitMode
-    )
-    .background(isInDarkMode ? Color.black : Color.white)
-    .padding(Constants.padding)
+    VStack{
+      SliderWithLabel(color: Color.red, text: "Red", sliderValue: $redValue)
+      SliderWithLabel(color: Color.green, text: "Green", sliderValue: $greenValue)
+      SliderWithLabel(color: Color.blue, text: "Blue", sliderValue: $blueValue)
+    }
   }
 }
 
+struct SliderWithLabel: View {
+  let color: Color
+  let text: String
+  @Binding var sliderValue: Double
+  
+  var body: some View {
+    VStack{
+      Text(text)
+      HStack{
+        Slider(value: $sliderValue, in: 0...Constants.maxColorValue)
+          .tint(color)
+        Text(String(Int(sliderValue.rounded())))
+      }
+    }
+  }
+  
+}
 
-
-struct ContentView_Previews: PreviewProvider {
+struct SlidersView_Previews: PreviewProvider {
+  static private var redValue = Binding.constant(56.0)
+  static private var greenValue = Binding.constant(156.0)
+  static private var blueValue = Binding.constant(106.0)
+  
   static var previews: some View {
-    ContentView()
-    ContentView()
-      .preferredColorScheme(.dark)
-    ContentView()
-      .previewInterfaceOrientation(.landscapeRight)
-    ContentView()
-      .preferredColorScheme(.dark)
-      .previewInterfaceOrientation(.landscapeRight)
+    SlidersView(
+      redValue: redValue,
+      greenValue: greenValue,
+      blueValue: blueValue
+    )
+    SlidersView(
+      redValue: redValue,
+      greenValue: greenValue,
+      blueValue: blueValue
+    )
+    .preferredColorScheme(.dark)
   }
 }
